@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            var array = []
+            var ishod = 0;
+            var elem = Number(prompt("Введите число элементов в массиве"));
+            for(i=0;i<elem;i++){
+                array[i] = Number(prompt("Введите элемент массива"));
+            }
+            //1 задание
+            for(i=0;i<array.length;i++){
+                if(array[i]<0){
+                    ishod+=array[i];
+                }
+            }
+            alert(ishod);
+            //2 задание
+            ishod = 1;
+            var max = 0;
+            var min = 0;
+            for(i=0;i<array.length;i++){
+                if(array[i]<array[min]){
+                    min = i;
+                }
+                else if(array[i]>array[max]){
+                    max = i;
+                }
+            }
+            //если индекс минимального числа больше максимального, то меняем местами, чтобы не повторять цикл
+            if(min>max){
+                var c = max;
+                max = min;
+                min = c;
+            }
+            for(i=min+1;i<max;i++){
+                ishod*=array[i];
+            }
+            alert(ishod);
+            //3 задание
+            array.sort(function (a, b) {
+                return a - b;
+            });
+            alert(array);
+        </script>
+    </head>
+<body>
+</body>
+</html>
